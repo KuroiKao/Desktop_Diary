@@ -25,21 +25,14 @@ namespace Desktop_Diary.WindowWPF
         public AddTask(UserIdNow userID)
         {
             InitializeComponent();
-            _userID = userID;
-            _userID.UserID = userID.UserID;
+            _userID = userID;            
         }
-
         private void AddTask_Click(object sender, RoutedEventArgs e)
         {
-            //var userNow = SingletonBase.GetInstance().Users.Where(x => x.UserId == _userID.UserID);
-            //_userID.UserID = userNow;
-
             BaseContext.Task task = new BaseContext.Task();
-
             string head = TextHeader.Text;
             string descrip = TextDescription.Text;
             DateTime datecomp = DataPick.SelectedDate.Value.Date;
-
             task.Header = head;
             task.Description = descrip;
             task.DateCompletion = datecomp;
@@ -49,11 +42,9 @@ namespace Desktop_Diary.WindowWPF
             SingletonBase.GetInstance().SaveChanges();
             DialogResult = true;
         }
-
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
         }
-
     }
 }

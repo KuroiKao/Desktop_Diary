@@ -19,20 +19,16 @@
                     <TextBox x:Name="TextName" Margin="0 5 0 15"
                              materialDesign:HintAssist.Hint="Введите имя" AcceptsReturn="True"
                              materialDesign:HintAssist.HelperText="Обязательно к заполнению"
-                             materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}" 
                              Style="{StaticResource MaterialDesignOutlinedTextBox}" TextWrapping="Wrap"/>
                     <TextBox x:Name="TextLogin" Margin="0 5 0 15" MaxLength="15"
                              materialDesign:HintAssist.Hint="Введите логин" AcceptsReturn="True"
                              materialDesign:HintAssist.HelperText="Обязательно к заполнению"
-                             materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}" 
                              Style="{StaticResource MaterialDesignOutlinedTextBox}" TextWrapping="Wrap"/>
                     <PasswordBox x:Name="PassBox" Margin="0 5 0 15" materialDesign:HintAssist.Hint="Введите пароль" MaxLength="15"
                                  materialDesign:HintAssist.HelperText="Обязательно к заполнению"
-                                 materialDesign:PasswordBoxAssist.Password="{Binding Path=Password2Validated, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True}"
                                  Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
                     <PasswordBox x:Name="PassBox2" Margin="0 5 0 15" materialDesign:HintAssist.Hint="Повторите пароль" MaxLength="15"
                                  materialDesign:HintAssist.HelperText="Обязательно к заполнению"
-                                 materialDesign:PasswordBoxAssist.Password="{Binding Path=Password2Validated, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True}"
                                  Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
                     <Button x:Name="OK" Content="OK" Margin="150 5 150 0" Click="OK_Click"/>
                 </StackPanel>

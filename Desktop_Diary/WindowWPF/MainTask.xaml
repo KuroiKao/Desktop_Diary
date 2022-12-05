@@ -13,25 +13,22 @@
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>            
-            <TabControl materialDesign:ColorZoneAssist.Mode="PrimaryMid" Style="{StaticResource MaterialDesignFilledTabControl}">
+            <TabControl x:Name="TabF" materialDesign:ColorZoneAssist.Mode="PrimaryMid" Style="{StaticResource MaterialDesignFilledTabControl}">
                 <TabItem x:Name="TabToday" Header="Сегодня">
                     <Grid Background="#FFE5E5E5">
-                        <DataGrid x:Name="TaskListToday" FontSize="16" AutoGenerateColumns="False">
+                        <DataGrid x:Name="TaskListToday" FontSize="16" AutoGenerateColumns="False" CanUserAddRows="False">
                             <DataGrid.Columns>
-                                <DataGridCheckBoxColumn Binding="{Binding Path=IsCompleted}"
-                                EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}">
+                                <DataGridCheckBoxColumn Binding="{Binding Path=IsCompleted}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}">
                                     <DataGridCheckBoxColumn.Header>
                                         <Border Background="Transparent">
                                             <CheckBox/>
                                         </Border>
-                                    </DataGridCheckBoxColumn.Header>
-                                    
+                                    </DataGridCheckBoxColumn.Header>                                    
                                     <DataGridCheckBoxColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
-                                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
                                         </Style>
-                                    </DataGridCheckBoxColumn.HeaderStyle>
-                                    
+                                    </DataGridCheckBoxColumn.HeaderStyle>                                    
                                 </DataGridCheckBoxColumn>
                                 <DataGridTextColumn Binding="{Binding Path = Header}"  IsReadOnly="False" Header="Заголовок" Width="200"/>
                                 <DataGridTextColumn Binding="{Binding Path = Description}" IsReadOnly="False" Header="Описание" Width="500"/>
@@ -42,7 +39,7 @@
                 </TabItem>
                 <TabItem x:Name="TabNextDay" Header="Завтра">
                     <Grid Background="#FFE5E5E5">
-                        <DataGrid x:Name="TaskListNextDay" FontSize="16" AutoGenerateColumns="False">
+                        <DataGrid x:Name="TaskListNextDay" FontSize="16" AutoGenerateColumns="False" CanUserAddRows="False">
                             <DataGrid.Columns>
                                 <DataGridCheckBoxColumn x:Name="CheckNextDay" Binding="{Binding IsSelected}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}">
                                     <DataGridCheckBoxColumn.Header>
@@ -65,7 +62,7 @@
                 </TabItem>
                 <TabItem x:Name="TabAll" Header="Все">
                     <Grid Background="#FFE5E5E5">
-                        <DataGrid x:Name="TaskListAll" FontSize="16" AutoGenerateColumns="False">
+                        <DataGrid x:Name="TaskListAll" FontSize="16" AutoGenerateColumns="False" CanUserAddRows="False">
                             <DataGrid.Columns>
                                 <DataGridCheckBoxColumn x:Name="CheckAll" Binding="{Binding IsSelected}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}">
                                     <DataGridCheckBoxColumn.Header>
@@ -88,8 +85,8 @@
                 </TabItem>
             </TabControl>
         </Border>
-        <!--<Button Content="Удалить" Width="100" HorizontalAlignment="Right" Margin="0,0,20,50" VerticalAlignment="Center" Click="Button_Click_Deleted"/>-->
-        <Button Content="Сохранить" Width="100" HorizontalAlignment="Right" Margin="0,50,20,0" VerticalAlignment="Center" Click="Button_Click_Update"/>
-        <Button Content="Добавить" Width="100" HorizontalAlignment="Right" Margin="0,150,20,0" VerticalAlignment="Center" Click="Button_Click_Add"/>
+        <Button Content="Удалить" Width="100" HorizontalAlignment="Right" Margin="10,0,10,50" VerticalAlignment="Center" Click="Button_Click_Deleted"/>
+        <Button Content="Обновить" Width="100" HorizontalAlignment="Right" Margin="10,50,10,0" VerticalAlignment="Center" Click="Button_Click_Update"/>
+        <Button Content="Добавить" Width="100" HorizontalAlignment="Right" Margin="10,150,10,0" VerticalAlignment="Center" Click="Button_Click_Add"/>
     </Grid>    
 </Window>
