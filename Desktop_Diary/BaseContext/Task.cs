@@ -1,7 +1,4 @@
-﻿using Desktop_Diary.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 
 namespace Desktop_Diary.BaseContext;
 
